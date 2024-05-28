@@ -171,7 +171,7 @@ const OrderPage = () => {
   const { isLoading, data } = mutationUpdate;
 
   const handleCancelUpdate = () => {
-    setStateUserDetails({ name: "", phone: "", address: "", city: "" });
+    setStateUserDetails({ name: "", phone: "", email: "", isAdmin: false });
     form.resetFields();
     setIsOpenModalUpdateInfo(false);
   };
@@ -547,18 +547,18 @@ const OrderPage = () => {
             form={form}
           >
             <Form.Item
-              label="Name"
+              label="Tên người dùng"
               name="name"
               rules={[{ required: true, message: "Please input name!" }]}
             >
               <InputComponent
-                value={stateUserDetails.name}
+                value={stateUserDetails["name"]}
                 onChange={handleOnchangeDetails}
                 name="name"
               />
             </Form.Item>
             <Form.Item
-              label="Phone"
+              label="Số điện thoại"
               name="phone"
               rules={[{ required: true, message: "Please input phone!" }]}
             >
@@ -569,7 +569,7 @@ const OrderPage = () => {
               />
             </Form.Item>
             <Form.Item
-              label="Address"
+              label="Địa chỉ"
               name="address"
               rules={[{ required: true, message: "Please input address!" }]}
             >
@@ -580,12 +580,12 @@ const OrderPage = () => {
               />
             </Form.Item>
             <Form.Item
-              label="City"
+              label="Tỉnh/Thành phố"
               name="city"
               rules={[{ required: true, message: "Please input city!" }]}
             >
               <InputComponent
-                value={stateUserDetails.city}
+                value={stateUserDetails["city"]}
                 onChange={handleOnchangeDetails}
                 name="city"
               />
